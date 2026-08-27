@@ -1,10 +1,10 @@
 # STM32Cube VS Code Video Tutorial Projects
 
-https://img.shields.io/badge/STM32-MCU-blue
-https://img.shields.io/badge/VS_Code-Workflow-007ACC
-https://img.shields.io/badge/CMake-Build_System-green
-https://img.shields.io/badge/Security-TrustZone-orange
-https://img.shields.io/badge/Multi--Core-STM32H755-red
+![STM32](https://img.shields.io/badge/STM32-MCU-blue)
+![VS Code](https://img.shields.io/badge/VS_Code-Workflow-007ACC)
+![CMake](https://img.shields.io/badge/CMake-Build_System-green)
+![TrustZone](https://img.shields.io/badge/Security-TrustZone-orange)
+![STM32H755](https://img.shields.io/badge/Multi--Core-STM32H755-red)
 
 Reference projects accompanying STM32 video tutorials focused on modern embedded development workflows using:
 
