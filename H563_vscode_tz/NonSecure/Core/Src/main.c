@@ -32,6 +32,10 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+#define LED_TOGGLE_DURATION_MS  5000U
+#define LED_TOGGLE_PERIOD_MS     100U
+#define SECURE_FLASH_ADDRESS     0x0C000000U
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -97,8 +101,26 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+    uint32_t toggleStartTick = HAL_GetTick();
+
+  while ((HAL_GetTick() - toggleStartTick) < LED_TOGGLE_DURATION_MS)
+  {
+    BSP_LED_Toggle(LED_GREEN);
+    HAL_Delay(LED_TOGGLE_PERIOD_MS);
+  }
+
+  BSP_LED_Off(LED_GREEN);
+
+  /* A Non-secure access to Secure Flash deliberately raises a security fault. */
+  (void)*(volatile const uint32_t *)SECURE_FLASH_ADDRESS;
+
+  //Should not reach here.
+  BSP_LED_On(LED_GREEN);
+  
   while (1)
   {
+
+    
 
     /* USER CODE END WHILE */
 

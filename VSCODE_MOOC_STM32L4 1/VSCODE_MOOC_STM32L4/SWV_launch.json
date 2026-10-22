@@ -1,0 +1,65 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "OpenOCD_Debug",
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "serverpath": "C:\\ST\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltools.openocd.win32_2.4.500.202604080855\\tools\\bin\\openocd.exe",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/Debug/${workspaceFolderBasename}.elf",
+            "device": "STM32L476RGT3",
+            "configFiles": [
+                "${workspaceFolder}/STM32L4.cfg"
+            ],
+            "searchDir": [
+                "C:\\ST\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.debug.openocd_2.3.400.202606220929\\resources\\openocd\\st_scripts"
+            ],
+            "svdFile": "C:\\ST\\STM32CubeIDE_2.1.1\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.productdb.debug_2.2.500.202605201745\\resources\\cmsis\\STMicroelectronics_CMSIS_SVD\\STM32L476.svd",
+            "interface": "swd",
+            "runToEntryPoint": "main",
+            "armToolchainPath": "C:/Users/${env:USERNAME}/AppData/Local/stm32cube/bundles/gnu-tools-for-stm32/14.3.1+st.2/bin",
+            "swoConfig": {
+                "source": "probe",
+                "enabled": true,
+                "swoFrequency": 2000000,
+                "cpuFrequency": 80000000,
+                "decoders": [
+                    {
+                        "port": 0,
+                        "type": "console",
+                        "label": "SWO output",
+                        "encoding": "ascii"
+                    },
+                    {
+                        "type": "graph",
+                        "port": 1,
+                        "encoding": "unsigned",
+                        "graphId": "1",
+                        "scale": 1
+                    }
+                ]
+            },
+            "graphConfig": [
+                {
+                    "label": "Graph 1",
+                    "timespan": 20,
+                    "type": "realtime",
+                    "annotate": true,
+                    "minimum": 0,
+                    "maximum": 2000,
+                    "plots": [
+                        {
+                            "graphId": "1",
+                            "label": "data 1",
+                            "color": "#E6007E"
+                        }
+                    ]
+                }
+            ],
+            "showDevDebugOutput": "raw"
+        }
+    ]
+}
